@@ -25,68 +25,68 @@ Total Wallpapers: **54**
 <a href='daylight-car-landscape.png'><img src='daylight-car-landscape.png' alt='daylight-car-landscape.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
+<a href='death-star.jpg'><img src='death-star.jpg' alt='death-star.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='firewatch-forest-mountain.png'><img src='firewatch-forest-mountain.png' alt='firewatch-forest-mountain.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='flower-field-3.png'><img src='flower-field-3.png' alt='flower-field-3.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
-<a href='flower-field.jpg'><img src='flower-field.jpg' alt='flower-field.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
+<a href='flower-field.jpg'><img src='flower-field.jpg' alt='flower-field.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='gruvbox-dark-cyberpunk-japanese-city.jpg'><img src='gruvbox-dark-cyberpunk-japanese-city.jpg' alt='gruvbox-dark-cyberpunk-japanese-city.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='gruvbox-dark-japanese-robot.png'><img src='gruvbox-dark-japanese-robot.png' alt='gruvbox-dark-japanese-robot.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
-<a href='gruvbox-dark-pacman.png'><img src='gruvbox-dark-pacman.png' alt='gruvbox-dark-pacman.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
+<a href='gruvbox-dark-pacman.png'><img src='gruvbox-dark-pacman.png' alt='gruvbox-dark-pacman.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='gruvbox-light-mountains.png'><img src='gruvbox-light-mountains.png' alt='gruvbox-light-mountains.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='hollow-knight.png'><img src='hollow-knight.png' alt='hollow-knight.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
-<a href='japanese-bridge-park.png'><img src='japanese-bridge-park.png' alt='japanese-bridge-park.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
+<a href='japanese-bridge-park.png'><img src='japanese-bridge-park.png' alt='japanese-bridge-park.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='kitty_dark.png'><img src='kitty_dark.png' alt='kitty_dark.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='koi-fish-pond.png'><img src='koi-fish-pond.png' alt='koi-fish-pond.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
-<a href='lofi-cafe-morning.png'><img src='lofi-cafe-morning.png' alt='lofi-cafe-morning.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
+<a href='lofi-cafe-morning.png'><img src='lofi-cafe-morning.png' alt='lofi-cafe-morning.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='lofi-cafe-night.png'><img src='lofi-cafe-night.png' alt='lofi-cafe-night.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='lofi-girl-window.png'><img src='lofi-girl-window.png' alt='lofi-girl-window.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
-<a href='lowpoly-street.png'><img src='lowpoly-street.png' alt='lowpoly-street.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
+<a href='lowpoly-street.png'><img src='lowpoly-street.png' alt='lowpoly-street.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='manga-portal.png'><img src='manga-portal.png' alt='manga-portal.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='manga-shrine.png'><img src='manga-shrine.png' alt='manga-shrine.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
-<a href='mellow-dreams-shrine.jpg'><img src='mellow-dreams-shrine.jpg' alt='mellow-dreams-shrine.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
+<a href='mellow-dreams-shrine.jpg'><img src='mellow-dreams-shrine.jpg' alt='mellow-dreams-shrine.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='minimalist-snorlax.png'><img src='minimalist-snorlax.png' alt='minimalist-snorlax.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='minimalist-space-person.jpg'><img src='minimalist-space-person.jpg' alt='minimalist-space-person.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
-<a href='moonlight-field.jpg'><img src='moonlight-field.jpg' alt='moonlight-field.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
+<a href='moonlight-field.jpg'><img src='moonlight-field.jpg' alt='moonlight-field.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='mountain-valley-art.jpg'><img src='mountain-valley-art.jpg' alt='mountain-valley-art.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='my-neighbor-totoro-sunflowers.png'><img src='my-neighbor-totoro-sunflowers.png' alt='my-neighbor-totoro-sunflowers.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
-<a href='neon-rain-drops.png'><img src='neon-rain-drops.png' alt='neon-rain-drops.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
+<a href='neon-rain-drops.png'><img src='neon-rain-drops.png' alt='neon-rain-drops.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='nord-dark-asian-town.png'><img src='nord-dark-asian-town.png' alt='nord-dark-asian-town.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='nord-dark-sakura.jpg'><img src='nord-dark-sakura.jpg' alt='nord-dark-sakura.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
-<a href='nord-nature-landscape.png'><img src='nord-nature-landscape.png' alt='nord-nature-landscape.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
+<a href='nord-nature-landscape.png'><img src='nord-nature-landscape.png' alt='nord-nature-landscape.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='nord-space-astronaut.png'><img src='nord-space-astronaut.png' alt='nord-space-astronaut.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='nord-spiderman.png'><img src='nord-spiderman.png' alt='nord-spiderman.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
-<a href='nord_alone_tree.png'><img src='nord_alone_tree.png' alt='nord_alone_tree.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
+<a href='nord_alone_tree.png'><img src='nord_alone_tree.png' alt='nord_alone_tree.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='nord_bridge.png'><img src='nord_bridge.png' alt='nord_bridge.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='nord_lake.png'><img src='nord_lake.png' alt='nord_lake.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
-<a href='red-dead-redemption-silhouette.jpg'><img src='red-dead-redemption-silhouette.jpg' alt='red-dead-redemption-silhouette.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
+<a href='red-dead-redemption-silhouette.jpg'><img src='red-dead-redemption-silhouette.jpg' alt='red-dead-redemption-silhouette.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='sakura-aura.jpg'><img src='sakura-aura.jpg' alt='sakura-aura.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='sakura-close-up.png'><img src='sakura-close-up.png' alt='sakura-close-up.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
-<a href='sakura-katana.jpg'><img src='sakura-katana.jpg' alt='sakura-katana.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
+<a href='sakura-katana.jpg'><img src='sakura-katana.jpg' alt='sakura-katana.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='samurai-snow.png'><img src='samurai-snow.png' alt='samurai-snow.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
-<a href='star-wars-death-star-wqhd-1440p-wallpaper.jpg'><img src='star-wars-death-star-wqhd-1440p-wallpaper.jpg' alt='star-wars-death-star-wqhd-1440p-wallpaper.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='sunset-anime-room.png'><img src='sunset-anime-room.png' alt='sunset-anime-room.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
