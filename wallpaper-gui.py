@@ -180,7 +180,7 @@ class WallpaperUpdateGUI:
             "# 🌌 Wallpapers Collection",
             f"\nA bunch of wallpapers I’ve made + collected from around the internet.\n\nTotal Wallpapers: **{len(images)}**\n",
             "\n".join(rows),
-            f"\n*Generated automatically by `repo-update.py`*"
+            f"\n*Generated automatically by `wallpaper-gui.py`*"
         ]
 
     def run_update(self):
