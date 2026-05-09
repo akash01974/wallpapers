@@ -1,12 +1,9 @@
 # 🌌 Wallpapers Collection
 
-A bunch of wallpapers I’ve made + collected from around the internet. If you recognize your work and would like credit or removal, feel free to reach out. Anyone is welcome to use these wallpapers for personal use.
+A bunch of wallpapers I’ve made + collected from around the internet.
 
 Total Wallpapers: **53**
 
-Click on any image to view it in full resolution.
-
----
 <div align='center'>
 <a href='10.png'><img src='10.png' alt='10.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='16.png'><img src='16.png' alt='16.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
@@ -97,6 +94,4 @@ Click on any image to view it in full resolution.
 <a href='zenitsu2-transformed.png'><img src='zenitsu2-transformed.png' alt='zenitsu2-transformed.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 
----
-
-*Generated automatically by `update_repo_gui.py`*
+*Generated automatically by `repo-update.py`*

@@ -111,7 +111,7 @@ class WallpaperUpdateGUI:
         self.run_btn.pack()
 
         # 3. Main Content (Fill remaining space)
-        content = tk.Frame(self.root, bg=BG_COLOR, padx=40, pady=(20, 0))
+        content = tk.Frame(self.root, bg=BG_COLOR, padx=40, pady=20)
         content.pack(fill="both", expand=True)
 
         tk.Label(content, text="System Status", font=("Segoe UI", 16, "bold"), fg=TEXT_PRIMARY, bg=BG_COLOR).pack(anchor="w")
