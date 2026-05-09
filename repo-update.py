@@ -28,27 +28,37 @@ class CustomModal(tk.Toplevel):
     def __init__(self, parent, title, message, is_error=False):
         super().__init__(parent)
         self.title(title)
-        self.geometry("400x200")
+        self.geometry("400x220")
         self.configure(bg=SURFACE_COLOR)
         self.resizable(False, False)
         self.transient(parent)
-        self.grab_set()
+        
+        # Ensure the window is shown before grabbing focus
+        self.withdraw()  # Hide while building
         
         # Center the modal
+        self.update_idletasks()
         x = parent.winfo_x() + (parent.winfo_width() // 2) - 200
-        y = parent.winfo_y() + (parent.winfo_height() // 2) - 100
+        y = parent.winfo_y() + (parent.winfo_height() // 2) - 110
         self.geometry(f"+{x}+{y}")
 
         color = ERROR_COLOR if is_error else SUCCESS_COLOR
         
         tk.Label(self, text="●", font=("Arial", 24), fg=color, bg=SURFACE_COLOR).pack(pady=(20, 0))
         tk.Label(self, text=title.upper(), font=("Segoe UI", 12, "bold"), fg=TEXT_PRIMARY, bg=SURFACE_COLOR).pack(pady=5)
-        tk.Label(self, text=message, font=("Segoe UI", 10), fg=TEXT_SECONDARY, bg=SURFACE_COLOR, wraplength=350).pack(pady=10)
+        
+        msg_label = tk.Label(self, text=message, font=("Segoe UI", 10), fg=TEXT_SECONDARY, 
+                             bg=SURFACE_COLOR, wraplength=350, justify="center")
+        msg_label.pack(pady=10, padx=20)
         
         btn = tk.Button(self, text="CLOSE", command=self.destroy, font=("Segoe UI", 9, "bold"), 
                         bg="#2d2d35", fg=TEXT_PRIMARY, activebackground="#3d3d45", 
-                        activeforeground="white", border=0, padx=20, pady=8, cursor="hand2")
-        btn.pack(pady=15)
+                        activeforeground="white", border=0, padx=30, pady=8, cursor="hand2")
+        btn.pack(pady=(10, 20))
+
+        self.deiconify() # Show it
+        self.wait_visibility() # Wait until it's on screen
+        self.grab_set() # Now grab focus safely
 
 class RoundedButton(tk.Canvas):
     def __init__(self, parent, text, command, width=200, height=45, radius=22, color=ACCENT_COLOR):
