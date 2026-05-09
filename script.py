@@ -225,8 +225,12 @@ class WallpaperUpdateGUI:
                     msg = "Sync repository"
                     
                 subprocess.check_call(["git", "commit", "-m", msg])
+                self.log("Successfully committed changes.", "success")
                 
-                self.log("Successfully committed changes to local branch.", "success")
+                # 5. Push to Remote
+                self.log("Pushing changes to GitHub...", "prompt")
+                subprocess.check_call(["git", "push"])
+                self.log("Successfully pushed to remote repository.", "success")
                 
                 # Determine the final message
                 if added > 0 and removed > 0:
