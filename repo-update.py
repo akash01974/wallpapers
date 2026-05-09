@@ -14,51 +14,54 @@ THUMBNAIL_WIDTH = "280px"
 IMAGE_EXTENSIONS = (".png", ".jpg", ".jpeg", ".gif", ".webp")
 
 # --- UI Constants ---
-BG_COLOR = "#0a0a0c"      # Deepest black/blue
-SURFACE_COLOR = "#16161a" # Card/Surface color
-ACCENT_COLOR = "#6366f1"  # Modern Indigo
-ACCENT_HOVER = "#818cf8"
-TEXT_PRIMARY = "#f8fafc"
-TEXT_SECONDARY = "#94a3b8"
-SHELL_BG = "#000000"
-SUCCESS_COLOR = "#22c55e"
-ERROR_COLOR = "#ef4444"
+BG_COLOR = "#0d1117"
+SURFACE_COLOR = "#161b22"
+BORDER_COLOR = "#30363d"
+ACCENT_COLOR = "#238636"
+ACCENT_HOVER = "#2ea043"
+TEXT_PRIMARY = "#c9d1d9"
+TEXT_SECONDARY = "#8b949e"
+SHELL_BG = "#010409"
+SUCCESS_COLOR = "#3fb950"
+ERROR_COLOR = "#f85149"
 
 class CustomModal(tk.Toplevel):
     def __init__(self, parent, title, message, is_error=False):
         super().__init__(parent)
         self.title(title)
-        self.geometry("400x220")
+        self.geometry("400x180") # Made slightly smaller since dot is gone
         self.configure(bg=SURFACE_COLOR)
         self.resizable(False, False)
         self.transient(parent)
         
         # Ensure the window is shown before grabbing focus
-        self.withdraw()  # Hide while building
+        self.withdraw()
         
         # Center the modal
         self.update_idletasks()
         x = parent.winfo_x() + (parent.winfo_width() // 2) - 200
-        y = parent.winfo_y() + (parent.winfo_height() // 2) - 110
+        y = parent.winfo_y() + (parent.winfo_height() // 2) - 90
         self.geometry(f"+{x}+{y}")
 
-        color = ERROR_COLOR if is_error else SUCCESS_COLOR
+        color = ERROR_COLOR if is_error else ACCENT_COLOR
         
-        tk.Label(self, text="●", font=("Arial", 24), fg=color, bg=SURFACE_COLOR).pack(pady=(20, 0))
-        tk.Label(self, text=title.upper(), font=("Segoe UI", 12, "bold"), fg=TEXT_PRIMARY, bg=SURFACE_COLOR).pack(pady=5)
+        # Header without the dot
+        tk.Label(self, text=title.upper(), font=("Segoe UI", 11, "bold"), 
+                 fg=color, bg=SURFACE_COLOR).pack(pady=(25, 5))
         
-        msg_label = tk.Label(self, text=message, font=("Segoe UI", 10), fg=TEXT_SECONDARY, 
+        msg_label = tk.Label(self, text=message, font=("Segoe UI", 10), fg=TEXT_PRIMARY, 
                              bg=SURFACE_COLOR, wraplength=350, justify="center")
         msg_label.pack(pady=10, padx=20)
         
-        btn = tk.Button(self, text="CLOSE", command=self.destroy, font=("Segoe UI", 9, "bold"), 
-                        bg="#2d2d35", fg=TEXT_PRIMARY, activebackground="#3d3d45", 
-                        activeforeground="white", border=0, padx=30, pady=8, cursor="hand2")
+        btn = tk.Button(self, text="DONE", command=self.destroy, font=("Segoe UI", 9, "bold"), 
+                        bg="#21262d", fg=TEXT_PRIMARY, activebackground="#30363d", 
+                        activeforeground="white", borderwidth=1, relief="flat",
+                        highlightbackground=BORDER_COLOR, padx=30, pady=6, cursor="hand2")
         btn.pack(pady=(10, 20))
 
-        self.deiconify() # Show it
-        self.wait_visibility() # Wait until it's on screen
-        self.grab_set() # Now grab focus safely
+        self.deiconify()
+        self.wait_visibility()
+        self.grab_set()
 
 class RoundedButton(tk.Canvas):
     def __init__(self, parent, text, command, width=200, height=45, radius=22, color=ACCENT_COLOR):
@@ -129,11 +132,11 @@ class WallpaperUpdateGUI:
         self.stats_label.pack(anchor="w", pady=(5, 15))
 
         # Shell Interface
-        shell_frame = tk.Frame(content, bg="#1e1e26", padx=1, pady=1)
+        shell_frame = tk.Frame(content, bg=BORDER_COLOR, padx=1, pady=1)
         shell_frame.pack(fill="both", expand=True, pady=(0, 10))
         
         self.log_area = scrolledtext.ScrolledText(
-            shell_frame, bg=SHELL_BG, fg="#a1a1aa", font=("Consolas", 10),
+            shell_frame, bg=SHELL_BG, fg=TEXT_SECONDARY, font=("Consolas", 10),
             padx=20, pady=20, borderwidth=0, highlightthickness=0,
             insertbackground=ACCENT_COLOR
         )
@@ -145,7 +148,7 @@ class WallpaperUpdateGUI:
         self.log_area.configure(state='disabled')
 
     def update_time(self):
-        self.time_label.config(text=datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+        self.time_label.config(text=datetime.now().strftime("%Y-%m-%d %I:%M:%S %p"))
         self.root.after(1000, self.update_time)
 
     def log(self, message, tag=None):
