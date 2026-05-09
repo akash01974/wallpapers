@@ -187,32 +187,48 @@ class WallpaperUpdateGUI:
         self.log("Initializing synchronization protocol...", "prompt")
 
         try:
+            # 1. Get images and git status
             images = sorted([f.name for f in Path(WALLPAPER_DIR).iterdir() if f.is_file() and f.suffix.lower() in IMAGE_EXTENSIONS and not f.name.startswith(".")])
-            git_status = subprocess.check_output(["git", "status", "--porcelain"]).decode("utf-8")
-            new_count = len([l for l in git_status.split("\n") if l.startswith("??") and any(l.lower().endswith(e) for e in IMAGE_EXTENSIONS)])
+            
+            git_status = subprocess.check_output(["git", "status", "--porcelain"]).decode("utf-8").splitlines()
+            
+            added = len([l for l in git_status if l.startswith("??") and any(l.lower().endswith(e) for e in IMAGE_EXTENSIONS)])
+            removed = len([l for l in git_status if l.startswith(" D") and any(l.lower().endswith(e) for e in IMAGE_EXTENSIONS)])
             
             self.log(f"Found {len(images)} total assets.")
-            self.log(f"New wallpapers detected: {new_count}")
-            self.stats_label.config(text=f"{len(images)} Assets Indexed • {new_count} Unstaged", fg=SUCCESS_COLOR)
+            self.stats_label.config(text=f"{len(images)} Assets Indexed • +{added} / -{removed}", fg=SUCCESS_COLOR)
 
+            # 2. Generate README
             self.log("Regenerating Markdown gallery...")
             content = self.generate_readme_content(images)
             with open(README_FILE, "w", encoding="utf-8") as f:
                 f.write("\n".join(content))
             
+            # 3. Check for any changes to commit
             status = subprocess.check_output(["git", "status", "-s"]).decode("utf-8")
             if not status.strip():
                 self.log("Local repository is already up to date.", "success")
-                CustomModal(self.root, "No Changes", "Your repository is already in sync.")
+                CustomModal(self.root, "All Caught Up", "Everything is perfect! Your collection is already up to date.")
             else:
-                self.log("Staging assets to local index...")
+                # 4. Stage and Commit
+                self.log(f"Syncing changes: +{added} added, -{removed} removed...")
                 subprocess.check_call(["git", "add", "."])
                 msg = "Add wallpapers collection"
-                self.log(f"Executing commit: {msg}")
                 subprocess.check_call(["git", "commit", "-m", msg])
                 
                 self.log("Successfully committed changes to local branch.", "success")
-                CustomModal(self.root, "Update Complete", f"Successfully indexed {new_count} new wallpapers locally.")
+                
+                # Determine the final message
+                if added > 0 and removed > 0:
+                    final_msg = f"Collection updated! Added {added} and removed {removed} wallpapers."
+                elif added > 0:
+                    final_msg = f"Sweet! Added {added} new wallpapers to your collection."
+                elif removed > 0:
+                    final_msg = f"Cleanup complete! Removed {removed} wallpapers from the gallery."
+                else:
+                    final_msg = "Gallery refreshed and repository updated successfully."
+                
+                CustomModal(self.root, "Update Complete", final_msg)
 
         except Exception as e:
             self.log(f"Critical Error: {e}", "error")
