@@ -49,7 +49,8 @@ def main():
 
     readme_content = [
         "# 🌌 Wallpapers Collection",
-        f"\nTotal Wallpapers: **{len(images)}**\n",
+        "\nA bunch of wallpapers I’ve made + collected from around the internet. If you recognize your work and would like credit or removal, feel free to reach out. Anyone is welcome to use these wallpapers for personal use.\n",
+        f"Total Wallpapers: **{len(images)}**\n",
         "Click on any image to view it in full resolution.\n",
         "---",
         markdown_grid,
