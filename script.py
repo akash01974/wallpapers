@@ -5,6 +5,7 @@ import tkinter as tk
 from tkinter import scrolledtext
 from datetime import datetime
 from pathlib import Path
+import threading
 
 # --- Configuration ---
 WALLPAPER_DIR = "."
@@ -67,6 +68,9 @@ class RoundedButton(tk.Canvas):
         self.color = color
         self.radius = radius
         self.text = text
+        self.is_loading = False
+        self._anim_id = None
+        self._dot_count = 0
         
         self.rect = self.create_rounded_rect(0, 0, width, height, radius, fill=color)
         self.label = self.create_text(width/2, height/2, text=text, fill="white", font=("Segoe UI", 10, "bold"))
@@ -81,12 +85,31 @@ class RoundedButton(tk.Canvas):
         return self.create_polygon(points, **kwargs, smooth=True)
 
     def on_hover(self, hovering):
+        if self.is_loading: return
         color = ACCENT_HOVER if hovering else self.color
         self.itemconfig(self.rect, fill=color)
 
+    def set_loading(self, loading):
+        self.is_loading = loading
+        if loading:
+            self.itemconfig(self.rect, fill=SURFACE_COLOR)
+            self._animate_dots()
+        else:
+            if self._anim_id:
+                self.after_cancel(self._anim_id)
+                self._anim_id = None
+            self.itemconfig(self.label, text=self.text)
+            self.itemconfig(self.rect, fill=self.color)
+
+    def _animate_dots(self):
+        if not self.is_loading: return
+        self._dot_count = (self._dot_count % 3) + 1
+        dots = "." * self._dot_count
+        self.itemconfig(self.label, text=dots)
+        self._anim_id = self.after(400, self._animate_dots)
+
     def on_click(self):
-        self.itemconfig(self.rect, fill="#4f46e5")
-        self.after(100, lambda: self.itemconfig(self.rect, fill=self.color))
+        if self.is_loading: return
         self.command()
 
 class WallpaperUpdateGUI:
@@ -183,72 +206,82 @@ class WallpaperUpdateGUI:
             f"\n*Generated automatically by `script.py`*"
         ]
 
+    def safe_log(self, message, tag=None):
+        self.root.after(0, self.log, message, tag)
+
+    def safe_modal(self, title, message, is_error=False):
+        self.root.after(0, lambda: CustomModal(self.root, title, message, is_error))
+
     def run_update(self):
-        self.log("Initializing synchronization protocol...", "prompt")
-
-        try:
-            # 1. Get images and git status
-            images = sorted([f.name for f in Path(WALLPAPER_DIR).iterdir() if f.is_file() and f.suffix.lower() in IMAGE_EXTENSIONS and not f.name.startswith(".")])
-            
-            git_status = subprocess.check_output(["git", "status", "--porcelain"]).decode("utf-8").splitlines()
-            
-            added = len([l for l in git_status if l.startswith("??") and any(l.lower().endswith(e) for e in IMAGE_EXTENSIONS)])
-            removed = len([l for l in git_status if l.startswith(" D") and any(l.lower().endswith(e) for e in IMAGE_EXTENSIONS)])
-            
-            self.log(f"Found {len(images)} total assets.")
-            self.stats_label.config(text=f"{len(images)} Assets Indexed • +{added} / -{removed}", fg=SUCCESS_COLOR)
-
-            # 2. Generate README
-            self.log("Regenerating Markdown gallery...")
-            content = self.generate_readme_content(images)
-            with open(README_FILE, "w", encoding="utf-8") as f:
-                f.write("\n".join(content))
-            
-            # 3. Check for any changes to commit
-            status = subprocess.check_output(["git", "status", "-s"]).decode("utf-8")
-            if not status.strip():
-                self.log("Local repository is already up to date.", "success")
-                CustomModal(self.root, "All Caught Up", "Everything is perfect! Your collection is already up to date.")
-            else:
-                # 4. Stage and Commit
-                self.log(f"Syncing changes: +{added} added, -{removed} removed...")
-                subprocess.check_call(["git", "add", "."])
+        def sync_thread():
+            try:
+                # 1. Get images and git status
+                images = sorted([f.name for f in Path(WALLPAPER_DIR).iterdir() if f.is_file() and f.suffix.lower() in IMAGE_EXTENSIONS and not f.name.startswith(".")])
                 
-                # Simplified commit message
-                if added > 0 and removed > 0:
-                    msg = f"Update wallpapers: +{added} / -{removed}"
-                elif added > 0:
-                    msg = f"Add {added} wallpapers"
-                elif removed > 0:
-                    msg = f"Remove {removed} wallpapers"
+                git_status = subprocess.check_output(["git", "status", "--porcelain"]).decode("utf-8").splitlines()
+                
+                added = len([l for l in git_status if l.startswith("??") and any(l.lower().endswith(e) for e in IMAGE_EXTENSIONS)])
+                removed = len([l for l in git_status if l.startswith(" D") and any(l.lower().endswith(e) for e in IMAGE_EXTENSIONS)])
+                
+                self.safe_log(f"Found {len(images)} total assets.")
+                self.root.after(0, lambda: self.stats_label.config(text=f"{len(images)} Assets Indexed • +{added} / -{removed}", fg=SUCCESS_COLOR))
+
+                # 2. Generate README
+                self.safe_log("Regenerating Markdown gallery...")
+                content = self.generate_readme_content(images)
+                with open(README_FILE, "w", encoding="utf-8") as f:
+                    f.write("\n".join(content))
+                
+                # 3. Check for any changes to commit
+                status = subprocess.check_output(["git", "status", "-s"]).decode("utf-8")
+                if not status.strip():
+                    self.safe_log("Local repository is already up to date.", "success")
+                    self.safe_modal("All Caught Up", "Everything is perfect! Your collection is already up to date.")
                 else:
-                    msg = "Sync repository"
+                    # 4. Stage and Commit
+                    self.safe_log(f"Syncing changes: +{added} added, -{removed} removed...")
+                    subprocess.check_call(["git", "add", "."])
                     
-                subprocess.check_call(["git", "commit", "-m", msg])
-                self.log("Successfully committed changes.", "success")
-                
-                # 5. Push to Remote
-                self.log("Pushing changes to GitHub...", "prompt")
-                subprocess.check_call(["git", "push"])
-                self.log("Successfully pushed to remote repository.", "success")
-                
-                # Determine the final message
-                if added > 0 and removed > 0:
-                    final_msg = f"Collection updated! Added {added} and removed {removed} wallpapers."
-                elif added > 0:
-                    final_msg = f"Sweet! Added {added} new wallpapers to your collection."
-                elif removed > 0:
-                    final_msg = f"Cleanup complete! Removed {removed} wallpapers from the gallery."
-                else:
-                    final_msg = "Gallery refreshed and repository updated successfully."
-                
-                CustomModal(self.root, "Update Complete", final_msg)
+                    # Simplified commit message
+                    if added > 0 and removed > 0:
+                        msg = f"Update wallpapers: +{added} / -{removed}"
+                    elif added > 0:
+                        msg = f"Add {added} wallpapers"
+                    elif removed > 0:
+                        msg = f"Remove {removed} wallpapers"
+                    else:
+                        msg = "Sync repository"
+                        
+                    subprocess.check_call(["git", "commit", "-m", msg])
+                    self.safe_log("Successfully committed changes.", "success")
+                    
+                    # 5. Push to Remote
+                    self.safe_log("Pushing changes to GitHub...", "prompt")
+                    subprocess.check_call(["git", "push"])
+                    self.safe_log("Successfully pushed to remote repository.", "success")
+                    
+                    # Determine the final message
+                    if added > 0 and removed > 0:
+                        final_msg = f"Collection updated! Added {added} and removed {removed} wallpapers."
+                    elif added > 0:
+                        final_msg = f"Sweet! Added {added} new wallpapers to your collection."
+                    elif removed > 0:
+                        final_msg = f"Cleanup complete! Removed {removed} wallpapers from the gallery."
+                    else:
+                        final_msg = "Gallery refreshed and repository updated successfully."
+                    
+                    self.safe_modal("Update Complete", final_msg)
 
-        except Exception as e:
-            self.log(f"Critical Error: {e}", "error")
-            CustomModal(self.root, "System Error", str(e), is_error=True)
-        finally:
-            self.log("Protocol finished.", "prompt")
+            except Exception as e:
+                self.safe_log(f"Critical Error: {e}", "error")
+                self.safe_modal("System Error", str(e), is_error=True)
+            finally:
+                self.safe_log("Protocol finished.", "prompt")
+                self.root.after(0, lambda: self.run_btn.set_loading(False))
+
+        self.run_btn.set_loading(True)
+        self.log("Initializing synchronization protocol...", "prompt")
+        threading.Thread(target=sync_thread, daemon=True).start()
 
 if __name__ == "__main__":
     root = tk.Tk()
