@@ -214,16 +214,15 @@ class WallpaperUpdateGUI:
                 self.log(f"Syncing changes: +{added} added, -{removed} removed...")
                 subprocess.check_call(["git", "add", "."])
                 
-                # Dynamic commit message
-                date_str = datetime.now().strftime("%Y-%m-%d")
+                # Simplified commit message
                 if added > 0 and removed > 0:
-                    msg = f"Auto-update: Added {added}, Removed {removed} wallpapers on {date_str}"
+                    msg = f"Update wallpapers: +{added} / -{removed}"
                 elif added > 0:
-                    msg = f"Auto-update: Added {added} new wallpapers on {date_str}"
+                    msg = f"Add {added} wallpapers"
                 elif removed > 0:
-                    msg = f"Auto-update: Removed {removed} wallpapers on {date_str}"
+                    msg = f"Remove {removed} wallpapers"
                 else:
-                    msg = f"Auto-update: Repository synced on {date_str}"
+                    msg = "Sync repository"
                     
                 subprocess.check_call(["git", "commit", "-m", msg])
                 
