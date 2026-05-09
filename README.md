@@ -5,27 +5,27 @@ A bunch of wallpapers I’ve made + collected from around the internet.
 Total Wallpapers: **53**
 
 <div align='center'>
-<a href='abstract-shapes-colors.png'><img src='abstract-shapes-colors.png' alt='abstract-shapes-colors.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='amber-island.jpg'><img src='amber-island.jpg' alt='amber-island.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='anime-snake-portrait.png'><img src='anime-snake-portrait.png' alt='anime-snake-portrait.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
+<a href='astronaut-blackhole.jpg'><img src='astronaut-blackhole.jpg' alt='astronaut-blackhole.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
-<a href='astronaut-blackhole.jpg'><img src='astronaut-blackhole.jpg' alt='astronaut-blackhole.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='astronaut-jellyfish-vibrant.jpg'><img src='astronaut-jellyfish-vibrant.jpg' alt='astronaut-jellyfish-vibrant.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='astronaut-jellyfish.png'><img src='astronaut-jellyfish.png' alt='astronaut-jellyfish.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
+<a href='astronaut-space-station.png'><img src='astronaut-space-station.png' alt='astronaut-space-station.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
-<a href='astronaut-space-station.png'><img src='astronaut-space-station.png' alt='astronaut-space-station.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='cat-mountain-sunset.png'><img src='cat-mountain-sunset.png' alt='cat-mountain-sunset.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='cosmic-hand.jpg'><img src='cosmic-hand.jpg' alt='cosmic-hand.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
+<a href='cyberpunk-girl-neon.png'><img src='cyberpunk-girl-neon.png' alt='cyberpunk-girl-neon.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
-<a href='cyberpunk-girl-neon.png'><img src='cyberpunk-girl-neon.png' alt='cyberpunk-girl-neon.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='cyberpunk-night-city.png'><img src='cyberpunk-night-city.png' alt='cyberpunk-night-city.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='dark-anime-village.png'><img src='dark-anime-village.png' alt='dark-anime-village.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
+<a href='daylight-car-landscape.png'><img src='daylight-car-landscape.png' alt='daylight-car-landscape.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
-<a href='daylight-car-landscape.png'><img src='daylight-car-landscape.png' alt='daylight-car-landscape.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
+<a href='firewatch-forest-mountain.png'><img src='firewatch-forest-mountain.png' alt='firewatch-forest-mountain.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='flower-field-3.png'><img src='flower-field-3.png' alt='flower-field-3.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='gruvbox-dark-cyberpunk-japanese-city.jpg'><img src='gruvbox-dark-cyberpunk-japanese-city.jpg' alt='gruvbox-dark-cyberpunk-japanese-city.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
@@ -94,4 +94,4 @@ Total Wallpapers: **53**
 <a href='zenitsu-demon-slayer.png'><img src='zenitsu-demon-slayer.png' alt='zenitsu-demon-slayer.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 
-*Generated automatically by `wallpaper-gui.py`*
+*Generated automatically by `script.py`*
