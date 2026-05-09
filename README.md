@@ -99,4 +99,4 @@ Click on any image to view it in full resolution.
 
 ---
 
-*Generated automatically by `auto_readme.py`*
+*Generated automatically by `update_repo_gui.py`*
