@@ -2,7 +2,7 @@
 
 A bunch of wallpapers I’ve made + collected from around the internet.
 
-Total Wallpapers: **55**
+Total Wallpapers: **56**
 
 <div align='center'>
 <a href='amber-island.jpg'><img src='amber-island.jpg' alt='amber-island.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
@@ -95,6 +95,7 @@ Total Wallpapers: **55**
 <a href='video-game-blackstreets.jpeg'><img src='video-game-blackstreets.jpeg' alt='video-game-blackstreets.jpeg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
+<a href='wallpaper2.jpg'><img src='wallpaper2.jpg' alt='wallpaper2.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='zenitsu-demon-slayer.png'><img src='zenitsu-demon-slayer.png' alt='zenitsu-demon-slayer.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 
