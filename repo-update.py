@@ -53,10 +53,7 @@ class CustomModal(tk.Toplevel):
                              bg=SURFACE_COLOR, wraplength=350, justify="center")
         msg_label.pack(pady=10, padx=20)
         
-        btn = tk.Button(self, text="DONE", command=self.destroy, font=("Segoe UI", 9, "bold"), 
-                        bg="#21262d", fg=TEXT_PRIMARY, activebackground="#30363d", 
-                        activeforeground="white", borderwidth=1, relief="flat",
-                        highlightbackground=BORDER_COLOR, padx=30, pady=6, cursor="hand2")
+        btn = RoundedButton(self, text="DONE", command=self.destroy, width=120, height=35, radius=17, color="#21262d")
         btn.pack(pady=(10, 20))
 
         self.deiconify()
