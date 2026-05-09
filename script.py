@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import subprocess
+import math
 import tkinter as tk
 from tkinter import scrolledtext
 from datetime import datetime
@@ -92,21 +93,49 @@ class RoundedButton(tk.Canvas):
     def set_loading(self, loading):
         self.is_loading = loading
         if loading:
+            self.itemconfig(self.label, state='hidden')
             self.itemconfig(self.rect, fill=SURFACE_COLOR)
-            self._animate_dots()
+            self._create_dots()
+            self._animate_loading_dots(0)
         else:
             if self._anim_id:
                 self.after_cancel(self._anim_id)
                 self._anim_id = None
-            self.itemconfig(self.label, text=self.text)
+            self._remove_dots()
+            self.itemconfig(self.label, state='normal')
             self.itemconfig(self.rect, fill=self.color)
 
-    def _animate_dots(self):
+    def _create_dots(self):
+        self._dots = []
+        w = self.winfo_width()
+        h = self.winfo_height()
+        for i in range(3):
+            x = (w / 2) + (i - 1) * 15
+            dot = self.create_oval(x-3, h/2-3, x+3, h/2+3, fill=TEXT_SECONDARY, outline="")
+            self._dots.append(dot)
+
+    def _remove_dots(self):
+        if hasattr(self, '_dots'):
+            for dot in self._dots:
+                self.delete(dot)
+            self._dots = []
+
+    def _animate_loading_dots(self, step):
         if not self.is_loading: return
-        self._dot_count = (self._dot_count % 3) + 1
-        dots = "." * self._dot_count
-        self.itemconfig(self.label, text=dots)
-        self._anim_id = self.after(400, self._animate_dots)
+        h = self.winfo_height()
+        w = self.winfo_width()
+        for i, dot in enumerate(self._dots):
+            # Sine wave for vertical bounce
+            y_offset = math.sin(step + i * 1.2) * 6
+            x = (w / 2) + (i - 1) * 15
+            self.coords(dot, x-3, h/2-3 + y_offset, x+3, h/2+3 + y_offset)
+            
+            # Pulse color/opacity
+            opacity = int(127 + 128 * math.sin(step + i * 1.2))
+            color = f'#{opacity:02x}{opacity:02x}{opacity:02x}'
+            # self.itemconfig(dot, fill=color) # Tkinter colors are tricky, let's just stick to movement for now or use fixed shades
+
+        self._anim_id = self.after(30, self._animate_loading_dots, step + 0.3)
 
     def on_click(self):
         if self.is_loading: return
