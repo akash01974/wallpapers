@@ -2,7 +2,7 @@
 
 A bunch of wallpapers I’ve made + collected from around the internet. If you recognize your work and would like credit or removal, feel free to reach out. Anyone is welcome to use these wallpapers for personal use.
 
-Total Wallpapers: **48**
+Total Wallpapers: **54**
 
 Click on any image to view it in full resolution.
 
@@ -80,10 +80,20 @@ Click on any image to view it in full resolution.
 <div align='center'>
 <a href='space.png'><img src='space.png' alt='space.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='stall.jpg'><img src='stall.jpg' alt='stall.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
-<a href='sword.jpg'><img src='sword.jpg' alt='sword.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
+<a href='star-wars-death-star-wqhd-1440p-wallpaper.jpg'><img src='star-wars-death-star-wqhd-1440p-wallpaper.jpg' alt='star-wars-death-star-wqhd-1440p-wallpaper.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
 <div align='center'>
+<a href='sword.jpg'><img src='sword.jpg' alt='sword.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='tree.jpg'><img src='tree.jpg' alt='tree.jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
+<a href='wallpaper (21).jpg'><img src='wallpaper (21).jpg' alt='wallpaper (21).jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
+</div>
+<div align='center'>
+<a href='wallpaper (23)(1).jpg'><img src='wallpaper (23)(1).jpg' alt='wallpaper (23)(1).jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
+<a href='wallpaper (24).jpg'><img src='wallpaper (24).jpg' alt='wallpaper (24).jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
+<a href='wallpaper (48).jpg'><img src='wallpaper (48).jpg' alt='wallpaper (48).jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
+</div>
+<div align='center'>
+<a href='wallpaper (89).jpg'><img src='wallpaper (89).jpg' alt='wallpaper (89).jpg' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='yll4wqs11gv61.png'><img src='yll4wqs11gv61.png' alt='yll4wqs11gv61.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 <a href='zenitsu2-transformed.png'><img src='zenitsu2-transformed.png' alt='zenitsu2-transformed.png' width='280px' style='border-radius: 8px; margin: 5px; border: 1px solid #333;'></a>
 </div>
