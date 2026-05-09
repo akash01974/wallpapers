@@ -213,7 +213,18 @@ class WallpaperUpdateGUI:
                 # 4. Stage and Commit
                 self.log(f"Syncing changes: +{added} added, -{removed} removed...")
                 subprocess.check_call(["git", "add", "."])
-                msg = "Add wallpapers collection"
+                
+                # Dynamic commit message
+                date_str = datetime.now().strftime("%Y-%m-%d")
+                if added > 0 and removed > 0:
+                    msg = f"Auto-update: Added {added}, Removed {removed} wallpapers on {date_str}"
+                elif added > 0:
+                    msg = f"Auto-update: Added {added} new wallpapers on {date_str}"
+                elif removed > 0:
+                    msg = f"Auto-update: Removed {removed} wallpapers on {date_str}"
+                else:
+                    msg = f"Auto-update: Repository synced on {date_str}"
+                    
                 subprocess.check_call(["git", "commit", "-m", msg])
                 
                 self.log("Successfully committed changes to local branch.", "success")
