@@ -90,4 +90,4 @@ Click on any image to view it in full resolution.
 
 ---
 
-*Generated automatically by `generate_readme.py`*
+*Generated automatically by `auto_readme.py`*

@@ -55,7 +55,7 @@ def main():
         "---",
         markdown_grid,
         "\n---",
-        "\n*Generated automatically by `generate_readme.py`*"
+        "\n*Generated automatically by `auto_readme.py`*"
     ]
 
     with open(README_FILE, "w", encoding="utf-8") as readme:
